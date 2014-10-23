@@ -4,29 +4,35 @@ bootCamp.controller('loginCtrl', function ($scope, $location, $rootScope) {
     $scope.password = '';
     $scope.isLoggedIn = false;
     $scope.login = function () {
-        if ($scope.email == 'badar@panacloud.com' && $scope.password == 'asdf'){alert($scope.password)
+        if ($scope.email == 'badar@panacloud.com' && $scope.password == 'asdf') {
+
             $location.path('/home');
         }
 
-        else{alert("22");
-            $location.path('/');}
+        else {
+
+            $location.path('/');
+        }
     }
 
 });
 bootCamp.controller('homeCtrl', function ($scope, $location, $rootScope) {
-    $scope.goToEditprofile=function(){
+    $scope.goToEditprofile = function () {
 
-$location.path('/editProfile');
+        $location.path('/editProfile');
     }
-    alert("badar");
+
 
 });
 bootCamp.controller('editProFileCtrl', function ($scope, $location, $rootScope) {
-
-$scope.goToEditpro=function(){
-
-
-}
+ $scope.firstName;
+ $scope.lastName;
+ $scope.conpany;
+ $scope.email;
+ $scope.timeZone;
+ $scope.userName;
+ $scope.password;
+ $scope.confirmPassword;
 
 
 });
