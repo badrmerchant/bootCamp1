@@ -5,6 +5,10 @@ var bootCamp = angular.module('bootCamp', ['ngRoute', 'ui.bootstrap', 'ui.tree']
     .config(['$routeProvider', function ($routeProvider) {//alert("config 1");
         $routeProvider
             .when('/', {
+                templateUrl: 'views/signUp.html',
+                controller: 'signUpCtrl'
+            })
+            .when('/login', {
                 templateUrl: 'views/login.html',
                 controller: 'loginCtrl'
             })
@@ -24,3 +28,20 @@ var bootCamp = angular.module('bootCamp', ['ngRoute', 'ui.bootstrap', 'ui.tree']
 
 
     }])
+
+    .factory('$localstorage', ['$window', function($window) {
+        return {
+            set: function(key, value) {
+                $window.localStorage[key] = value;
+            },
+            get: function(key, defaultValue) {
+                return $window.localStorage[key] || defaultValue;
+            },
+            setObject: function(key, value) {
+                $window.localStorage[key] = JSON.stringify(value);
+            },
+            getObject: function(key) {
+                return JSON.parse($window.localStorage[key] || '{}');
+            }
+        }
+    }]);

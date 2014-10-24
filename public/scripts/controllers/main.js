@@ -1,3 +1,23 @@
+bootCamp.controller('signUpCtrl', function ($scope, $location, $rootScope) {
+    $scope.signIn = function () {
+        $location.path('/login');
+    }
+    $scope.firstName = '';
+    $scope.lastName = '';
+    $scope.email = '';
+    $scope.password='';
+
+
+   $scope.signUp=function(){
+
+
+
+   }
+
+
+});
+
+
 bootCamp.controller('loginCtrl', function ($scope, $location, $rootScope) {
 
     $scope.email = '';
@@ -25,14 +45,14 @@ bootCamp.controller('homeCtrl', function ($scope, $location, $rootScope) {
 
 });
 bootCamp.controller('editProFileCtrl', function ($scope, $location, $rootScope) {
- $scope.firstName;
- $scope.lastName;
- $scope.conpany;
- $scope.email;
- $scope.timeZone;
- $scope.userName;
- $scope.password;
- $scope.confirmPassword;
+    $scope.firstName;
+    $scope.lastName;
+    $scope.conpany;
+    $scope.email;
+    $scope.timeZone;
+    $scope.userName;
+    $scope.password;
+    $scope.confirmPassword;
 
 
 });
