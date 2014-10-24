@@ -1,11 +1,11 @@
 /**
  * Created by Badar on 10/24/2014.
  */
-bootCamp.factory('editFactory', function ($localstorage, $modal) {
-    var addQuiz;
-    var addQuestion=[];
-  //  var quizs=[];
-    var editProfile={};
+bootCamp.factory('editFactory', function ($localstorage) {
+
+
+
+    var editProfile;
 
     function updateData(){
         $localstorage.setObject('user2',{editProfile:editProfile});
@@ -22,57 +22,33 @@ bootCamp.factory('editFactory', function ($localstorage, $modal) {
         editProfile=$localstorage.getObject('user2').editProfile;
 
 
-    var makeQuizTaker=
-    {
-        'addPages': [],
-        addQuiz: [
 
-        ],
-        addQuestion: [
-
-        ],
-        'addLater': []
-
-
-    };
 
     function setEditProfile(a) {
 
 
-        quizs.push(a);
+        editProfile=a;
         updateData();
 
     }
     function getEditProfile() {
+        alert("get");
 
         updateData();
-        return quizs;
+        return $localstorage.getObject('user2').editProfile;
 
     }
 
-    function setAddQuestion(a) {
 
-        addQuestion.push(a);
-
-
-    }
-    function getAddQuestion(){
-
-        return addQuestion;
-    }
 //console.log(selectedCourseFromJoinedCourses);
     function upDate() {
     }
 
 
     return {
-        makeQuizTaker:makeQuizTaker,
-        setAddQuestion:setAddQuestion,
-        getAddQuestion: getAddQuestion,
-        getQuizs:getQuizs,
-        setQuizs:setQuizs,
-        quizs:quizs,
-        updateData:updateData
+        setEditProfile:setEditProfile,
+        getEditProfile  :getEditProfile
+
     }
 
 
