@@ -20,7 +20,10 @@ var bootCamp = angular.module('bootCamp', ['ngRoute', 'ui.bootstrap', 'ui.tree']
                 templateUrl: 'views/editProfile.html',
                 controller: 'editProFileCtrl'
             })
-
+           .when('/map', {
+                templateUrl: 'views/map.html',
+                controller: 'geoLocation'
+            })
 
             .otherwise({
                 redirectTo: '/'

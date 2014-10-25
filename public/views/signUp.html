@@ -1,123 +1,139 @@
 <form class="form-horizontal createQuiz" role="form" ng-init="obj={}">
-<div class="container">
-    <div class="well">
-        <form  class="form-horizontal well" method="post">
-            <fieldset>
-                <legend>PANACLOUD BOOT CAMP</legend>
-
-                <h4>It’s free and always will be.</h4>
-
-                <div class="row">
-                    <div class="col-xs-8">
-                        <div class="form-group">
-                            <div class="rows">
-                                <div class="col-md-8">
-                                    <div class="col-lg-6">
-                                        <input class="form-control input-lg" id="fName" name=
-                                                "fName" placeholder="First Name" type="text" ng-model="obj.firstName">{{firstName}}
-                                    </div>
-
-                                    <div class="col-lg-6">
-                                        <input class="form-control input-lg" id="lName" name=
-                                                "lName" placeholder="Last Name" type="text" ng-model="obj.lastName">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <div class="rows">
-                                <div class="col-md-8">
-                                    <div class="col-lg-12">
-                                        <input class="form-control input-lg" id="email" name=
-                                                "email" placeholder="Your Email" type="text" ng-model="obj.email">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <div class="rows">
-                                <div class="col-md-8">
-                                    <div class="col-lg-12">
-                                        <input class="form-control input-lg" id="reemail" name=
-                                                "reemail" placeholder="Re-enter Email" type="text">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <div class="rows">
-                                <div class="col-md-8">
-                                    <div class="col-lg-12">
-                                        <input class="form-control input-lg" id="password"
-                                               name="password" placeholder="New Password" type=
-                                                "password" ng-model="obj.password">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <div class="rows">
-                                <div class="col-md-8">
-                                    <h4></h4>
-
-
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <div class="rows">
-                                <div class="col-md-4">
-                                    <div class="col-lg-6">
-                                        <div class="radio">
-                                            <label><input checked id="optionsRadios1" name=
-                                                    "optionsRadios" type="radio" value=
-                                                                  "Female">Female</label>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-lg-6">
-                                        <div class="radio">
-                                            <label><input id="optionsRadios2" name=
-                                                    "optionsRadios" type="radio" value="Male">
-                                                Male</label>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <div class="rows">
-                                <div class="col-md-8">
-                                    <div class="col-lg-12">
-                                        <button class="btn btn-success btn-lg" type=
-                                                "submit" ng-click="signUp()">Sign Up</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <div class="rows">
-                                <div class="col-md-8">
-                                    <div class="col-lg-12">
-                                        <button class="btn btn-success btn-lg" type=
-                                                "submit" ng-click="signIn()">Sign In</button>
-                                    </div>
-                                </div>
-                            </div>
+    <div class="container">
+        <div class="well">
+            <div class="btn pull-right">
+                <div class="rows">
+                    <div class="col-md-1">
+                        <div class="col-lg-1">
+                            <button class="btn btn-primary" type=
+                                    "submit" ng-click="signIn()">Sign In
+                            </button>
                         </div>
                     </div>
                 </div>
-            </fieldset>
-        </form>
+            </div>
+            <form class="form-horizontal well" method="post">
+
+                <fieldset>
+                    <div class="btn pull-right">
+
+                    </div>
+                    <legend>PANACLOUD BOOT CAMP</legend>
+
+                    <h4>It’s free and always will be.</h4>
+
+                    <P class="text-right">
+                        <legend>PANA CLOUD</legend>
+
+                    <h3 class="text-right">HERE WE ARE ATTENDING BOOT CAMP</h3>
+                    <h3 class="text-right">SUITE# 205 DHA PHASE 5 K</h3>
+
+                    </P>
+                    <div class="row">
+                        <div class="col-xs-8">
+                            <div class="form-group">
+                                <div class="rows">
+                                    <div class="col-md-8">
+                                        <div class="col-lg-6">
+                                            <input class="form-control input-lg" id="fName" name=
+                                                    "fName" placeholder="First Name" type="text"
+                                                   ng-model="obj.firstName">{{firstName}}
+                                        </div>
+
+                                        <div class="col-lg-6">
+                                            <input class="form-control input-lg" id="lName" name=
+                                                    "lName" placeholder="Last Name" type="text" ng-model="obj.lastName">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="rows">
+                                    <div class="col-md-8">
+                                        <div class="col-lg-12">
+                                            <input class="form-control input-lg" id="email" name=
+                                                    "email" placeholder="Your Email" type="text" ng-model="obj.email">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="rows">
+                                    <div class="col-md-8">
+                                        <div class="col-lg-12">
+                                            <input class="form-control input-lg" id="reemail" name=
+                                                    "reemail" placeholder="Re-enter Email" type="text">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="rows">
+                                    <div class="col-md-8">
+                                        <div class="col-lg-12">
+                                            <input class="form-control input-lg" id="password"
+                                                   name="password" placeholder="New Password" type=
+                                                    "password" ng-model="obj.password">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="rows">
+                                    <div class="col-md-8">
+                                        <h4></h4>
+
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!--<div class="form-group">-->
+                            <!--<div class="rows">-->
+                            <!--<div class="col-md-4">-->
+                            <!--<div class="col-lg-6">-->
+                            <!--<div class="radio">-->
+                            <!--<label><input checked id="optionsRadios1" name=-->
+                            <!--"optionsRadios" type="radio" value=-->
+                            <!--"Female">Female</label>-->
+                            <!--</div>-->
+                            <!--</div>-->
+
+                            <!--<div class="col-lg-6">-->
+                            <!--<div class="radio">-->
+                            <!--<label><input id="optionsRadios2" name=-->
+                            <!--"optionsRadios" type="radio" value="Male">-->
+                            <!--Male</label>-->
+                            <!--</div>-->
+                            <!--</div>-->
+                            <!--</div>-->
+                            <!--</div>-->
+                            <!--</div>-->
+
+                            <div class="form-group">
+                                <div class="rows">
+                                    <div class="col-md-8">
+                                        <div class="col-lg-12">
+                                            <button class="btn btn-success btn-lg" type=
+                                                    "submit" ng-click="signUp()">Sign Up
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
     </div>
-</div>
 </form>
-<pre>{{obj | json}}</pre>
+
+<!--<pre>{{obj | json}}</pre>-->
 
 

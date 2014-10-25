@@ -32,7 +32,7 @@ bootCamp.factory('editFactory', function ($localstorage) {
 
     }
     function getEditProfile() {
-        alert("get");
+
 
         updateData();
         return $localstorage.getObject('user2').editProfile;
