@@ -1,12 +1,12 @@
 bootCamp.controller('signUpCtrl', function ($scope, $location, $rootScope, editFactory, $timeout) {
 
-    $scope.$watch('email', function () {
-        if ($scope.email == editFactory.getEditProfile()['email']) {
+    //$scope.$watch('email', function () {
+        //if ($scope.email == editFactory.getEditProfile()['email']) {
 
-            $location.path('/login');
+           // $location.path('/login');
 
-        }
-    })
+        //}
+    //})
 
 
     $scope.signIn = function () {
@@ -59,15 +59,18 @@ bootCamp.controller('homeCtrl', function ($scope, $location, $rootScope, editFac
 
 
 });
-bootCamp.controller('editProFileCtrl', function ($scope, $location, $rootScope) {
-    $scope.firstName;
-    $scope.lastName;
-    $scope.conpany;
-    $scope.email;
-    $scope.timeZone;
-    $scope.userName;
-    $scope.password;
-    $scope.confirmPassword;
+bootCamp.controller('editProFileCtrl', function ($scope, $location, $rootScope,editFactory) {
+
+
+
+$scope.edit=function() {
+    $scope.obj.email=editFactory.getEditProfile()['email'];
+    console.log(editFactory.getEditProfile()['email']);
+    console.log($scope.obj.email);
+  editFactory.setEditProfile($scope.obj);
+    console.log($scope.obj);
+}
+
 
 
 });
