@@ -1,9 +1,9 @@
-bootCamp.controller('signUpCtrl', function ($scope, $location, $rootScope, editFactory,$timeout) {
+bootCamp.controller('signUpCtrl', function ($scope, $location, $rootScope, editFactory, $timeout) {
 
     $scope.$watch('email', function () {
         if ($scope.email == editFactory.getEditProfile()['email']) {
 
-                $location.path('/login');
+            $location.path('/login');
 
         }
     })
@@ -44,12 +44,12 @@ bootCamp.controller('loginCtrl', function ($scope, $location, $rootScope, editFa
 
 
 });
-bootCamp.controller('homeCtrl', function ($scope, $location, $rootScope,editFactory) {
-   $scope.firstName=editFactory.getEditProfile()['firstName'];
-    $scope.lastName=editFactory.getEditProfile()['lastName'];
-   $scope.goToMap=function(){
-       $location.path('/map');
-   }
+bootCamp.controller('homeCtrl', function ($scope, $location, $rootScope, editFactory) {
+    $scope.firstName = editFactory.getEditProfile()['firstName'];
+    $scope.lastName = editFactory.getEditProfile()['lastName'];
+    $scope.goToMap = function () {
+        $location.path('/map');
+    }
 
 
     $scope.goToEditprofile = function () {
@@ -71,64 +71,36 @@ bootCamp.controller('editProFileCtrl', function ($scope, $location, $rootScope) 
 
 
 });
-bootCamp.controller('geoLocation', function ($scope) {
-    $scope.ip = '';
-    var map;
+bootCamp.controller('geoLocation', function ($scope,$http) {
+
 
     function initialize() {
-        var mapOptions = {
-            zoom: 6
-        };
-        map = new google.maps.Map(document.getElementById('map-canvas'),
-            mapOptions);
 
-        // Try HTML5 geolocation
-        if (navigator.geolocation) {
-            navigator.geolocation.getCurrentPosition(function (position) {
-                var pos = new google.maps.LatLng(position.coords.latitude,
-                    position.coords.longitude);
+                // Try HTML5 geolocation
+                if (navigator.geolocation) {
+                    navigator.geolocation.getCurrentPosition(function (position) {
+                        $scope.latitude=position.coords.latitude;
+                        $scope.longitude=position.coords.longitude;
+                        console.log(position.coords.latitude);
+                        console.log(position.coords.longitude);
 
-                var infowindow = new google.maps.InfoWindow({
-                    map: map,
-                    position: pos,
-                    content: 'You Are Here.'
-                });
 
-                map.setCenter(pos);
-            }, function () {
-                $scope.handleNoGeolocation(true);
-            });
-        } else {
-            // Browser doesn't support Geolocation
-        }
+                    });
+                }
+                else {
+            console.log("Browser doesn't support Geolocation");
+                     }
+
+        var url = "http://ip-api.com/json/?callback=JSON_CALLBACK";
+
+        $http.jsonp(url).success(
+            function(s) {
+                $scope.ip = s.query;
+            },
+            function(e) { $scope.error = JSON.stringify(e); } )
+
     }
 
-    $scope.handleNoGeolocation = function handleNoGeolocation(errorFlag) {
-        if (errorFlag) {
-            var content = 'Error: The Geolocation service failed.';
-        } else {
-            var content = 'Error: Your browser doesn\'t support geolocation.';
-        }
-
-        var options = {
-            map: map,
-            position: new google.maps.LatLng(60, 105),
-            content: content
-        };
-
-        var infowindow = new google.maps.InfoWindow(options);
-        map.setCenter(options.position);
-    }
-
-    google.maps.event.addDomListener(window, 'load', initialize);
-
-    $.getJSON("http://ip-api.com/json/?callback=?", function (data) {
-        var table_body = "";
-        console.log(data);
-        table_body = data.query;
-        $scope.ip = table_body;
-        $("#GeoResults").html(table_body);
-    });
     initialize()
 
 });
