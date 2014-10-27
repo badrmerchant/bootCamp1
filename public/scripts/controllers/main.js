@@ -65,19 +65,23 @@ bootCamp.controller('editProFileCtrl', function ($scope, $location, $rootScope,e
 
 $scope.edit=function() {
     $scope.obj.email=editFactory.getEditProfile()['email'];
+    console.log($scope.obj.email);
     console.log(editFactory.getEditProfile()['email']);
     console.log($scope.obj.email);
   editFactory.setEditProfile($scope.obj);
-    console.log($scope.obj);
+  console.log($scope.obj);
 }
 
 
 
 });
-bootCamp.controller('geoLocation', function ($scope,$http) {
+bootCamp.controller('geoLocation', function ($scope,$http,Duration) {
+    $scope.duration = Duration.getDuration()
+    $scope.start = Duration.start,
+   // $scope.time = Duration.getDuration();
+    // /$scope.start=Duration.start();
 
-
-    function initialize() {
+     $scope.initialze = function() {
 
                 // Try HTML5 geolocation
                 if (navigator.geolocation) {
@@ -86,7 +90,7 @@ bootCamp.controller('geoLocation', function ($scope,$http) {
                         $scope.longitude=position.coords.longitude;
                         console.log(position.coords.latitude);
                         console.log(position.coords.longitude);
-
+                       // $scope.$digest();
 
                     });
                 }
@@ -104,6 +108,6 @@ bootCamp.controller('geoLocation', function ($scope,$http) {
 
     }
 
-    initialize()
-
+    $scope.initialze();
+    //$scope.$digest();
 });
