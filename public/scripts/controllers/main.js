@@ -88,7 +88,7 @@ bootCamp.controller('geoLocation', function ($scope,$http) {
                     });
                 }
                 else {
-            console.log("Browser doesn't support Geolocation");
+            console.log("Browser doesn't support Geolocation sorry");
                      }
 
         var url = "http://ip-api.com/json/?callback=JSON_CALLBACK";
