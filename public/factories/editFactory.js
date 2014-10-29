@@ -4,33 +4,27 @@
 bootCamp.factory('editFactory', function ($localstorage) {
 
 
-
     var editProfile;
 
-    function updateData(){
-        $localstorage.setObject('user2',{editProfile:editProfile});
+    function updateData() {
+        $localstorage.setObject('user2', {editProfile: editProfile});
     }
 
 
-
-
-
-    if(!localStorage.user)
-        $localstorage.setObject('user2',{editProfile:editProfile});
-    else
-    if ($localstorage.getObject('user2').editProfile)
-        editProfile=$localstorage.getObject('user2').editProfile;
-
-
+    if (!localStorage.user)
+        $localstorage.setObject('user2', {editProfile: editProfile});
+    else if ($localstorage.getObject('user2').editProfile)
+        editProfile = $localstorage.getObject('user2').editProfile;
 
 
     function setEditProfile(a) {
 
 
-        editProfile=a;
+        editProfile = a;
         updateData();
 
     }
+
     function getEditProfile() {
 
 
@@ -46,8 +40,8 @@ bootCamp.factory('editFactory', function ($localstorage) {
 
 
     return {
-        setEditProfile:setEditProfile,
-        getEditProfile  :getEditProfile
+        setEditProfile: setEditProfile,
+        getEditProfile: getEditProfile
 
     }
 

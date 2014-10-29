@@ -1,13 +1,14 @@
 /**
  * Created by Badar on 10/27/2014.
  */
-bootCamp.factory('Duration',function($timeout) {
+bootCamp.factory('Duration', function ($timeout) {
     var eachTick = 1000;
     var isRunning = false;
     var data = {
             value: 0,
             minutes: '',
-            seconds: ''
+            seconds: '',
+            hours: 0
         },
 
         stopwatch = null;
@@ -34,6 +35,10 @@ bootCamp.factory('Duration',function($timeout) {
             data.value++;
             updateClock()
             increment();
+            if (data.minutes == 60) {
+                data.minutes = 0;
+                data.hours++
+            }
             if (data.value == 0) {
                 stop();
             }
