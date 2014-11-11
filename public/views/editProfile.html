@@ -1,5 +1,5 @@
 <div class="container">
-    <form class="form-horizontal createQuiz" role="form" ng-init="obj={}">
+    <form class="form-horizontal createQuiz" role="form">
         <h1>Edit Profile</h1>
         <hr>
         <div class="row">
@@ -29,21 +29,24 @@
                             <label class="col-lg-3 control-label">First name:</label>
 
                             <div class="col-lg-8">
-                                <input class="form-control" type="text" ng-model="obj.firstName">{{firstName}}
+                                <input class="form-control" type="text" ng-model="obj.firstName"
+                                       placeholder="{{obj.firstName}}">{{firstName}}
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="col-lg-3 control-label">Last name:</label>
 
                             <div class="col-lg-8">
-                                <input class="form-control" type="text" ng-model="obj.lastName">{{lastName}}
+                                <input class="form-control" type="text" ng-model="obj.lastName"
+                                       placeholder="{{obj.lastName}}">
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="col-lg-3 control-label">Company:</label>
 
                             <div class="col-lg-8">
-                                <input class="form-control" type="text" ng-model="obj.company">{{company}}
+                                <input class="form-control" type="text" ng-model="obj.company"
+                                       placeholder="{{obj.company}}">{{company}}
                             </div>
                         </div>
                         <!--<div class="form-group">-->
@@ -84,10 +87,11 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="col-md-3 control-label">Username:</label>
+                            <label class="col-md-3 control-label" placeholder="{{obj.userName}}">Username:</label>
 
                             <div class="col-md-8">
-                                <input class="form-control" type="text" value="janeuser">
+                                <input class="form-control" type="text" ng-model="obj.userName"
+                                       placeholder="{{obj.userName}}">
                             </div>
                         </div>
                         <div class="form-group">
@@ -101,7 +105,8 @@
                             <label class="col-md-3 control-label">Confirm password:</label>
 
                             <div class="col-md-8">
-                                <input class="form-control" type="password" value="" ng-model="obj.confirmpassword">{{confirmpassword}}
+                                <input class="form-control" type="password" value="" ng-model="obj.confirmpassword"
+                                       placeholder="{{obj.confirmpassword}}">{{confirmpassword}}
                             </div>
                         </div>
                         <div class="form-group">

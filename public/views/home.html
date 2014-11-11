@@ -1,8 +1,14 @@
-<P><h4>{{firstName}}{{lastName}}</h4></P>
+<P>
+    <h4>{{firstName}}{{lastName}}</h4>
+</P>
 <button class="btn  btn-primary" type="submit" ng-click="goToEditprofile()">Edit Profile</button>
 
 
-<div><strong><h3>Elapsed Time:</h3> <h3></strong><h3>hour:{{time.hours}}minutes:{{time.minutes}}seconds:{{time.seconds}}</h3> </div>
+<div>
+    <h3>
+        <strong>hour:{{time.hours}}minutes:{{time.minutes}}seconds:{{time.seconds}}</strong>
+    </h3>
+</div>
 <button id="start" class="btn btn-success" ng-click="start()">Start</button>
-<button id="stop" class="btn btn-danger" ng-click="stop()">Stop</button>
+<button id="stop" class="btn btn-danger" ng-click="stop(); totalTime()">Stop</button>
 <button id="reset" class="btn btn-default" ng-click="reset()">Reset</button>

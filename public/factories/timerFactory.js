@@ -12,11 +12,14 @@ bootCamp.factory('Duration', function ($timeout) {
         },
 
         stopwatch = null;
+    var lastTime = function(time){
+        data.minutes =  time.minutes;
+        data.seconds =  time.seconds;
+        data.hours   =  time.hours;
+    }
     var setTime = function (minutes) {
         data.value = minutes * 60;
         data.time = data.value;
-
-
     };
     var start = function () {
         if (isRunning === false) {
@@ -86,6 +89,7 @@ bootCamp.factory('Duration', function ($timeout) {
         reset: reset,
         setTime: setTime,
         getDuration: getDuration,
-        addStart: addStart
+        addStart: addStart,
+        lastTime:lastTime
     };
 });
